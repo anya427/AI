@@ -26,6 +26,13 @@
                 <h2>关键词抽取</h2>
             </div>
 
+<!--            //输入显示关键词个数-->
+            <div class="topk" >
+                <p style="color: #036fe2">关键词个数：</p>
+                <el-input v-model.number="topK" placeholder="请输入想要显示的关键词个数" class="keynumber" type="number"></el-input>
+            </div>
+
+
             <!--      中间文本输入部分-->
             <div class="inputContent">
 
@@ -66,7 +73,11 @@
         name: 'Index',
         data() {
             return {
+                //输入的文本
                 text: '',
+                //输入的关键字个数
+                topK:6,
+                // topN:6,
                 // requestWords: [],
                 // 返回效果一般的关键词
                 outputtext1: '',
@@ -80,18 +91,20 @@
             system(){
                 this.$router.push('/system')
             },
-
+            // number(){
+            //     this.topK = this.topN;
+            // },
             async onsubmit1() {
                 // this.requestWords = this.text.split(" ")
                 // console.log(this.requestWords)
-                const {data: res} = await this.$http.post('/lzy/getKeywordTextRank', {text: this.text})
+                const {data: res} = await this.$http.post('/lzy/getKeywordTextRank', {text: this.text, topK: this.topK})
                 this.outputtext1 = res
             },
 
             async onsubmit2() {
                 // this.requestWords = this.text.split(" ")
                 // console.log(this.requestWords)
-                const {data: res} = await this.$http.post('/lzy/getKeywordPFSRank', {text: this.text})
+                const {data: res} = await this.$http.post('/lzy/getKeywordPFSRank', { text: this.text, topK: this.topK})
                 this.outputtext2 = res
             },
         }
@@ -133,9 +146,18 @@
 
 
 
+    .topk{
+        display: flex;
+        margin-left: 50px;
+    }
+
+    .keynumber{
+        width: 230px;
+        margin-bottom: 35px;
+    }
     .content-top {
         width: 1000px;
-        height: 750px;
+        height: 850px;
         text-align: center;
         margin: 40px auto;
         border: 2px dashed #409EFF;
@@ -235,8 +257,5 @@
     .btn2 {
         margin-left: 150px;
     }
-
-
-
 
 </style>

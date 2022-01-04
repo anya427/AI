@@ -7,17 +7,17 @@
         </div>
     </div> 
     <div class="card-all">
-        <!--        纠错-->
-<!--        <div class="card" @click="correction">-->
-<!--            <div class="card-img">-->
-<!--                <img src="https://ai.bdstatic.com/file/7E8ED17FEB0B493EBC0615801398A7AF">-->
-<!--            </div>-->
+<!--                纠错-->
+        <div class="card" @click="correction">
+            <div class="card-img">
+                <img src="https://ai.bdstatic.com/file/7E8ED17FEB0B493EBC0615801398A7AF">
+            </div>
 
-<!--            <div class="card-text">-->
-<!--                <h3>文本纠错</h3>-->
-<!--                <span>文本纠错能够自动对汉语文本中的拼写错误进行显示标红并纠错校对</span>-->
-<!--            </div>-->
-<!--        </div>-->
+            <div class="card-text">
+                <h3>文本纠错</h3>
+                <span>文本纠错能够自动对汉语文本中的拼写错误进行显示标红并纠错校对</span>
+            </div>
+        </div>
 
 
         <!--        关键词-->
@@ -33,8 +33,8 @@
         </div>
 
 
-        <!--        翻译改事件抽取-->
-        <div class="card"  @click="translate">
+        <!--        事件抽取-->
+        <div class="card"  @click="event">
             <div class="card-img" >
                 <img src="https://ai.bdstatic.com/file/BE7D80B38EED43F1A90C3F568EB68B65">
             </div>
@@ -45,41 +45,41 @@
             </div>
         </div>
         <!--        翻译-->
-<!--        <div class="card"  @click="translate">-->
-<!--            <div class="card-img" >-->
-<!--                <img src="https://ai.bdstatic.com/file/BE7D80B38EED43F1A90C3F568EB68B65">-->
-<!--            </div>-->
+        <div class="card"  @click="translate">
+            <div class="card-img" >
+                <img src="https://ai.bdstatic.com/file/BE7D80B38EED43F1A90C3F568EB68B65">
+            </div>
 
-<!--            <div class="card-text" >-->
-<!--                <h3>文本翻译</h3>-->
-<!--                <span>翻译能够将一种语言转换成另外一种语言</span>-->
-<!--            </div>-->
-<!--        </div>-->
+            <div class="card-text" >
+                <h3>文本翻译</h3>
+                <span>翻译能够将一种语言转换成另外一种语言</span>
+            </div>
+        </div>
 
         <!--        义原-->
-<!--        <div class="card" @click="sememe">-->
-<!--            <div class="card-img">-->
-<!--                <img src="https://ai.bdstatic.com/file/5A653F1D37E541109E2D6CAE834F07B1">-->
-<!--            </div>-->
+        <div class="card" @click="sememe">
+            <div class="card-img">
+                <img src="https://ai.bdstatic.com/file/5A653F1D37E541109E2D6CAE834F07B1">
+            </div>
 
-<!--            <div class="card-text">-->
-<!--                <h3>义原预测</h3>-->
-<!--                <span>义原预测可以预测输入词汇的义原（人类最小的语义单位）并将其输出</span>-->
-<!--            </div>-->
-<!--        </div>-->
+            <div class="card-text">
+                <h3>义原预测</h3>
+                <span>义原预测可以预测输入词汇的义原（人类最小的语义单位）并将其输出</span>
+            </div>
+        </div>
 
 
         <!--        推荐-->
-<!--        <div class="card" onclick="window.open('http://10.5.114.113:8080')">-->
-<!--            <div class="card-img">-->
-<!--                <img src="https://ai.bdstatic.com/file/DAAA94F76A524382B4CB478FF243450E">-->
-<!--            </div>-->
+        <div class="card" onclick="window.open('http://10.5.114.113:8080')">
+            <div class="card-img">
+                <img src="https://ai.bdstatic.com/file/DAAA94F76A524382B4CB478FF243450E">
+            </div>
 
-<!--            <div class="card-text">-->
-<!--                <h3>新闻推荐</h3>-->
-<!--                <span>新闻推荐在面对海量的数据时有针对性的向用户推荐其可能需要的新闻资料</span>-->
-<!--            </div>-->
-<!--        </div>  -->
+            <div class="card-text">
+                <h3>新闻推荐</h3>
+                <span>新闻推荐在面对海量的数据时有针对性的向用户推荐其可能需要的新闻资料</span>
+            </div>
+        </div>
     </div>
     </div>
     
@@ -113,6 +113,10 @@
             // 翻译跳转页面
             translate(){
                 this.$router.push('/translate');
+            },
+            //事件抽取
+            event(){
+                this.$router.push('/event');
             },
         }
     }

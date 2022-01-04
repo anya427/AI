@@ -19,7 +19,7 @@ module.exports = {
                 }
             },
             '/lzy': {
-                target: 'http://10.5.150.185:8085',//鲁
+                target: 'http://10.5.151.223:9501',//鲁
                 // ws: true,
                 changOrigin: true,
                 pathRewrite: {
@@ -38,6 +38,13 @@ module.exports = {
                 changOrigin: true,
                 pathRewrite: {
                     '^/ljd': ''
+                }
+            },
+            '/mqx': {
+                target: 'http://10.5.151.223:9504',//孟
+                changOrigin: true,
+                pathRewrite: {
+                    '^/mqx': ''
                 }
             },
         },

@@ -8,41 +8,46 @@ const routes = [
     path: '/',
     redirect: '/system'
   },
-  // {
-  //   path: '/login',
-  //   name:'登录',
-  //   component: () => import('../components/Login.vue')
-  // },
-  // {
-  //   path:'/introduce',
-  //   name:'简介',
-  //   component:() => import('../components/Introduce.vue')
-  // },
+  {
+    path: '/login',
+    name:'登录',
+    component: () => import('../components/Login.vue')
+  },
+  {
+    path:'/introduce',
+    name:'简介',
+    component:() => import('../components/Introduce.vue')
+  },
   {
     path:'/system',
     name:'系统界面',
     component:() => import('../components/System.vue')
   },
-  // {
-  //   path:'/sememe',
-  //   name:'义原',
-  //   component:() => import('../components/Sememe.vue')
-  // },
+  {
+    path:'/sememe',
+    name:'义原',
+    component:() => import('../components/Sememe.vue')
+  },
   {
     path:'/keywords',
     name:'关键字',
     component:() => import('../components/Keywords.vue')
   },
-  // {
-  //   path:'/correction',
-  //   name:'纠错',
-  //   component:() => import('../components/Correction.vue')
-  // },
-  // // Translate
+  {
+    path:'/correction',
+    name:'纠错',
+    component:() => import('../components/Correction.vue')
+  },
+  // Translate
   {
     path:'/translate',
     name:'翻译',
     component:() => import('../components/Translate.vue')
+  },
+  {
+    path:'/event',
+    name:'翻译',
+    component:() => import('../components/event.vue')
   },
 ]
 

@@ -66,7 +66,7 @@ export default {
   data() {
     return {
         text:'',
-        requestWords: [],
+        // requestWords: [],
         outputtext:[],
     }
   },
@@ -75,14 +75,15 @@ export default {
       system(){
           this.$router.push('/system')
       },
-   async onsubmit() {
-          this.requestWords = this.text.split("，")
-          console.log(this.requestWords)
-          const {data : res} = await this.$http.post('/lsr/sememe/',{requestWords:this.requestWords})
-          this.outputtext = res.data.data
+      async onsubmit() {
+          // let event = []
+          // this.requestWords = this.text
+          // console.log(this.requestWords)
+          const {data : res} = await this.$http.post('/mqx/doEventExtraction',{text:this.text})
+          console.log(res)
+          this.outputtext = res
 
-      },
-
+      }
   }
 
 }
